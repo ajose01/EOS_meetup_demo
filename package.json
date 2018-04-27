@@ -6,8 +6,10 @@
   "author": "Angel Jose",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "start": "webpack-dev-server --mode development --watch"
   },
   "devDependencies": {
     "webpack": "^4.6.0",
