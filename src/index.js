@@ -17,8 +17,6 @@ document.addEventListener('scatterLoaded', scatterExtension => {
     getIdentity()
   })
 
-  let currentIdentity // We'll hold the identity here
-
   const network = { host:"159.65.161.242", port:8888 }
   const eosOptions = {}
 
@@ -27,7 +25,6 @@ document.addEventListener('scatterLoaded', scatterExtension => {
   let getIdentity = () => {
     scatter.getIdentity(['account']).then(identity => {
       console.log(identity, "identityFound")
-      currentIdentity = identity
       // do not assign to window in actual projects... only for learning.
       window.identity = identity
       // User "Accept" action
@@ -36,7 +33,6 @@ document.addEventListener('scatterLoaded', scatterExtension => {
       button.setAttribute("hidden", "")
     }).catch(error => {
       console.log(error, "identityCrisis!")
-      currentIdentity = "Identity Crisis!"
       // User "Deny" action
       title.innerHTML = "Oh so close... maybe next time"
       vid.src = "https://media.giphy.com/media/2sfHfGhM3zKUzZ5xzh/giphy.mp4"
