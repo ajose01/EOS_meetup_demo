@@ -9,3 +9,6 @@ I demo’d a simple dApp at our [EOS meetup group](https://www.meetup.com/EOS-Da
 
 Link to demo:
 https://ajose01.github.io/EOS_meetup_demo/
+
+Crypto DM 🤫
+0x2794d1321035F0ef2fAAd52e21CAd2EF82362835
