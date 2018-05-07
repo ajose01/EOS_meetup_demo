@@ -6,3 +6,6 @@ I demo’d a simple dApp at our [EOS meetup group](https://www.meetup.com/EOS-Da
 * If we do find that we have Scatter… we will have the extension prompt for access to an identity.
 * If we “Approve” access to that identity, we unlock all the EOS goodies.
 * If we “Decline” then we handle that scenario and let the person know they were “oh so close”.
+
+Link to demo:
+https://ajose01.github.io/EOS_meetup_demo/
