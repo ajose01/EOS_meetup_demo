@@ -5,7 +5,7 @@ let vid = document.getElementById("vid")
 let button = document.getElementById("secretButton")
 
 document.addEventListener('scatterLoaded', scatterExtension => {
-  const scatter = window.scatter
+  scatter = window.scatter
   // uncomment following in actual projects
   // window.scatter = null
 
@@ -17,13 +17,18 @@ document.addEventListener('scatterLoaded', scatterExtension => {
     getIdentity()
   })
 
-  const network = { host:"159.65.161.242", port:8888 }
+  const network = {
+    blockchain:'eos',
+    host:'159.65.161.242',
+    port:8888
+  }
+
   const eosOptions = {}
 
-  const eos = scatter.eos( Eos.Localnet, network, eosOptions )
+  const eos = scatter.eos( network, Eos.Localnet, eosOptions )
 
   let getIdentity = () => {
-    scatter.getIdentity(['account']).then(identity => {
+    scatter.getIdentity().then(identity => {
       console.log(identity, "identityFound")
       // do not assign to window in actual projects... only for learning.
       window.identity = identity
