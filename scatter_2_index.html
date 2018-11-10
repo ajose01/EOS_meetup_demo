@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <h1>Scatter DEMO</h1>
+  <input id="getId" type="button" value="Get Scatter ID" onclick="getScatterId();" />
+  <script
+    src="https://cdn.scattercdn.com/file/scatter-cdn/js/latest/scatterjs-core.min.js">
+  </script>
+  <script
+    src="https://cdn.scattercdn.com/file/scatter-cdn/js/latest/scatterjs-plugin-eosjs2.min.js">
+  </script>
+
+
+</html>
+<script>
+  //import ScatterJS from 'scatterjs-core';
+  //import ScatterEOS from 'scatterjs-plugin-eosjs2';
+  var scatter;
+  var network = {
+    blockchain:'eos',
+    protocol:'https',
+    host:'nodes.get-scatter.com',
+    port:443,
+    chainId:'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906'
+  };
+
+  ScatterJS.plugins( new ScatterEOS() );
+
+  const connectionOptions = {initTimeout:10000}
+
+  ScatterJS.scatter.connect("HI EVERYONE :)", connectionOptions).then(connected => {
+    if(!connected) {
+      console.log("aww go get scatter!")
+    }
+      console.log("Scatter connection found")
+    scatter = ScatterJS.scatter;
+    // window.ScatterJS = null;
+  });
+
+  function getScatterId() {
+    scatter.getIdentity().then(identity => {
+      console.log("yay id found!", identity)
+    }).catch(error => {
+      console.log("sadness...:\n", error)
+    });
+  }
+</script>
+
